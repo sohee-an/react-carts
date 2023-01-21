@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import React, { useEffect } from "react";
-import axios from "axios";
+
 //comoponents
 import Cart from "../Pages/Cart/Cart";
 //style
@@ -41,9 +41,11 @@ const Home = () => {
 
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, items) => ack + items.amount, 0);
+
   const handleAddToCart = (clickedItem: CartItemType) =>
     setCartItems((prev) => {
       const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+
       if (isItemInCart) {
         return prev.map((item) =>
           item.id === clickedItem.id
@@ -53,7 +55,9 @@ const Home = () => {
       }
       // 만일 처음 카트에 들어간다면
       return [...prev, { ...clickedItem, amount: 1 }];
+      console.log("hi");
     });
+
   const handleRemoveFromCart = (id: number) => {
     setCartItems((prev) =>
       prev.reduce((ack, item) => {
