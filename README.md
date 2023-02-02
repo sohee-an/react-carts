@@ -16,10 +16,12 @@ You will also see any lint errors in the console.
 
 ### `프로젝트 목표`
 
-- typescript로 쇼핑몰 만들기
+- typescript를 사용해서 쇼핑몰 만들기
 
 ### `기술 스택 `
 
 - react
 - react-query
 - styled-compoents
+
+![](shopingCart.gif)
